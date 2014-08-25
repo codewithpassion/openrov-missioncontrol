@@ -15,6 +15,9 @@ require('./server/express')(app);
 //Bootstrap routes
 require('./server/routes')(app);
 
+// handle errors
+require('./server/errors.js')(app);
+
 //Start the app by listening on <port>
 var port = process.env.PORT || config.port;
 app.listen(port);
