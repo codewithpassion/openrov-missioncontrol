@@ -6,7 +6,7 @@
         <link href="css/style.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body ng-app>
         <div class="navbar navbar-inverse navbar-fixed-top">
           <div class="container navbar-left">
             <div id="menu">
@@ -27,12 +27,16 @@
         
         <!-- Main ROW -->
         <div id="main-row" class="full-height">
-    		</div>
+    		aa {{ "foo Bar" }}
+          <input type="text" ng-model="yourName" placeholder="Enter a name here">
+          <h1>Hello, {{ yourName }}!</h1>
+        </div>
         
         
         <!-- Le javascript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
+        <script type='text/javascript' src="bower_components/angular/angular.js"></script>
         <script type='text/javascript' src="bower_components/jquery/dist/jquery.min.js"></script>
         <script type='text/javascript' src="bower_components/jquery-ui/jquery-ui.min.js"></script>
         <script type='text/javascript' src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
