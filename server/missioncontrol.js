@@ -15,16 +15,16 @@ var assets = {
 config.express.setup(app, __dirname + '/');
 config.routes.setup(app, assets);
 
+var deps = {
+  server: server,
+  app: app,
+  io: io,
+  socket: undefined
+};
+
 io.sockets.on('connection', function (socket) {
   deps.socket = socket;
 });
-
-var deps = {
-    server: server,
-    app: app,
-    io: io,
-    socket: undefined
-  };
 
 // Load the plugins
 loader.loadPlugins(path.join(__dirname, 'plugins'), '/plugin', deps, addPluginAssets);
