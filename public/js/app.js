@@ -4,5 +4,6 @@ $(function() {
 });
 
 angular.module('MissionControlApp', [
-  'MissionControlApp.controllers'
+  'MissionControlApp.controllers',
+  'MissionControlApp.services'
 ]);
