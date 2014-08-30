@@ -10,7 +10,13 @@ var config = require('./config'),
 // Keep track of plugins js and css to load them in the view
 var assets = {
   scripts: [],
-  styles: []
+  styles: [],
+  plugins: [],
+  ngModules: function() {
+    var result = [];
+    assets.plugins.forEach(function(plugin) { if (plugin.ngModule) { result.push("'" + plugin.ngModule + "'"); }});
+    return result.join();
+  }
 };
 
 config.express.setup(app, __dirname + '/');
@@ -37,6 +43,7 @@ server.listen(config.settings.port, function() {
 function addPluginAssets(result) {
   assets.scripts = assets.scripts.concat(result.scripts);
   assets.styles = assets.styles.concat(result.styles);
+  assets.plugins = assets.plugins.concat(result.plugins);
   result.assets.forEach(
     function(asset) {
       app.use(asset.path, express.static(asset.assets));
