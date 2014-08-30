@@ -31,18 +31,14 @@
 
     <!-- Main ROW -->
     <div id="main-row" class="full-height">
-      <div ng-controller="exampleController">
-        <div ng-repeat="rov in exampleList">
-          <strong>No: </strong><span>{{ rov.number }}</span><br>
-          <strong>Name: </strong><span>{{ rov.name }}</span>
-        </div>
-      </div>
+      <ng-view></ng-view>
     </div>
 
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script type='text/javascript' src="bower_components/angular/angular.js"></script>
+    <script type='text/javascript' src="bower_components/angular-route/angular-route.js"></script>
     <script type='text/javascript' src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type='text/javascript' src="bower_components/jquery-ui/jquery-ui.min.js"></script>
     <script type='text/javascript' src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
