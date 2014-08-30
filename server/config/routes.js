@@ -1,10 +1,10 @@
 module.exports = {
   setup: function(app, assets) {
     app.get('/', function (req, res) {
+
+      console.log(assets.scripts);
       res.render('index', {
-        title: 'Express',
-        scripts: assets.scripts,
-        styles: assets.styles
+        assets: assets
       });
     });
   }

@@ -1,5 +1,6 @@
-var config = require('./config');
-  app = require('express')(),
+var config = require('./config'),
+  express = require('express'),
+  app = express(),
   server = require('http').Server(app),
   io = require('socket.io')(server),
   path = require('path'),
@@ -27,7 +28,7 @@ io.sockets.on('connection', function (socket) {
 });
 
 // Load the plugins
-loader.loadPlugins(path.join(__dirname, 'plugins'), '/plugin', deps, addPluginAssets);
+loader.loadPlugins(path.join(__dirname, '../plugins'), '/plugin', deps, addPluginAssets);
 
 server.listen(config.settings.port, function() {
   console.log('Started listening on port: ' + config.settings.port);
