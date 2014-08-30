@@ -6,7 +6,7 @@ $(function() {
 angular.module('MissionControlApp', [
   'MissionControlApp.controllers',
   'MissionControlApp.services',
-  'MissionControlAppSubModules',
+  'MissionControlApp.subModules',
   'ngRoute'
 ]).
   config(['$routeProvider', function($routeProvider) {

@@ -45,14 +45,12 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/app.js"></script>
 
-    <%
-    var ngModulesToLoad = assets.ngModules();
-    console.log(ngModulesToLoad );
-    for(var i=0; i< assets.scripts.length; i++) {%>
-    <script type="text/javascript" src="<%= assets.scripts[i] %>"></script><% } %>
+    <% for(var i=0; i< assets.scripts.length; i++) { %>
+    <script type="text/javascript" src="<%= assets.scripts[i] %>"></script>
+    <% } %>
 
     <script type="text/javascript">
-      angular.module('MissionControlAppSubModules', [<%- ngModulesToLoad %>]);
+      angular.module('MissionControlApp.subModules', [<%- assets.ngModules() %>]);
     </script>
 
   </body>
